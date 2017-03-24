@@ -1,24 +1,15 @@
-# README
+This is a basic demo application for active_encode. Assuming that
+you have the (avalon-docker)[] containers up and running you can
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+```bash
+rails c
+```
 
-* Ruby version
+and then
 
-* System dependencies
+```ruby
+encode = ActiveEncode::Base.create(File.open("#{Rails.root}/test/fixtures/sample.mp4"))
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+to get send a file to matterhorn 
