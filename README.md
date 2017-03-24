@@ -1,5 +1,5 @@
 This is a basic demo application for active_encode. Assuming that
-you have the [avalone-docker](https://github.com/avalonmediasystem/avalon-docker) containers up and running you can
+you have the [avalon-docker](https://github.com/avalonmediasystem/avalon-docker) containers up and running you can
 
 
 ```bash
