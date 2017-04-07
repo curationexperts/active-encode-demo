@@ -12,15 +12,8 @@ GIT
       rest-client
 
 GIT
-  remote: git@github.com:projecthydra-labs/active_encode.git
-  revision: 715159a9b66a5b2418701cc6b962df66d677034f
-  specs:
-    active_encode (0.1.0)
-      activesupport
-
-GIT
   remote: git@github.com:projecthydra/hydra-derivatives.git
-  revision: 737d2e8cfed25e9dccf074ce5085890018252787
+  revision: 58f26fa5d5008fc8304d191a29a4f64f27af2123
   branch: wait_for_encode_to_finish
   specs:
     hydra-derivatives (3.2.1)
@@ -70,6 +63,8 @@ GEM
       activesupport (>= 3.0.0)
       rdf (~> 2.0, >= 2.0.2)
       rdf-vocab
+    active_encode (0.1.0)
+      activesupport
     activejob (5.0.2)
       activesupport (= 5.0.2)
       globalid (>= 0.3.6)
@@ -244,7 +239,7 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.1.9)
       execjs (>= 0.3.0, < 3)
@@ -265,7 +260,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_encode!
   byebug
   coffee-rails (~> 4.2)
   hydra-derivatives!

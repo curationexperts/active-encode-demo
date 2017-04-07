@@ -56,7 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mediashelf-loggable'
 gem 'rubyhorn', git: 'git@github.com:avalonmediasystem/rubyhorn.git'
-gem 'active_encode', git: 'git@github.com:projecthydra-labs/active_encode.git'
 
 #gem 'hydra-derivatives', path: '/Users/valerie/valerie/work/program/workspace/dce/code/hydra/hydra-derivatives'
 gem 'hydra-derivatives', git: 'git@github.com:projecthydra/hydra-derivatives.git', branch: 'wait_for_encode_to_finish'
