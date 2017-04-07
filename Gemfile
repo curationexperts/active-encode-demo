@@ -44,9 +44,11 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
+
+  # Don't use spring since we are using this demo app for gem development.
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+#  gem 'spring'
+#  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -55,3 +57,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mediashelf-loggable'
 gem 'rubyhorn', git: 'git@github.com:avalonmediasystem/rubyhorn.git'
 gem 'active_encode', git: 'git@github.com:projecthydra-labs/active_encode.git'
+
+#gem 'hydra-derivatives', path: '/Users/valerie/valerie/work/program/workspace/dce/code/hydra/hydra-derivatives'
+gem 'hydra-derivatives', git: 'git@github.com:projecthydra/hydra-derivatives.git', branch: 'wait_for_encode_to_finish'
+
+
