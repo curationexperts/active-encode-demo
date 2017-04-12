@@ -12,6 +12,14 @@ Set up a pipeline on AWS that defines:
 
 [The regions are listed here](http://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region)
 
+### Configure AWS credentials
+
+Optional: If you don't want to pass these values in the rails console, you can set environment variables instead:
+
+* AWS\_ACCESS\_KEY\_ID
+* AWS\_SECRET\_ACCESS\_KEY
+* AWS\_REGION
+
 ### Configure initializer
 
 In `config/initializers/active_encode.rb`, make sure you have the following code:
