@@ -2,6 +2,8 @@
 
 ## Prerequsites
 
+### Run Matterhorn
+
 To use matterhorn for media encoding, you need to have matterhorn running.
 
 You can use [avalon-docker](https://github.com/avalonmediasystem/avalon-docker) to run matterhorn if you don't already have a matterhorn server.
@@ -14,6 +16,14 @@ docker-compose up matterhorn
 
 and you should be able to launch the web console at `http://localhost:8080/`
 
+### Configure initializer
+
+In `config/initializers/active_encode.rb`, make sure you have the following code:
+
+```ruby
+ActiveEncode::Base.engine_adapter = :matterhorn
+Rubyhorn.init
+```
 
 ## How to run an encoding job using hydra-derivatives (which uses active\_encode)
 

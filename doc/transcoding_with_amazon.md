@@ -2,6 +2,8 @@
 
 ## Prerequsites
 
+### Set up AWS pipeline
+
 Set up a pipeline on AWS that defines:
 
 * input bucket
@@ -9,6 +11,14 @@ Set up a pipeline on AWS that defines:
 * bucket for thumbnails
 
 [The regions are listed here](http://docs.aws.amazon.com/general/latest/gr/rande.html#elastictranscoder_region)
+
+### Configure initializer
+
+In `config/initializers/active_encode.rb`, make sure you have the following code:
+
+```ruby
+ActiveEncode::Base.engine_adapter = :elastic_transcoder
+```
 
 ## How to run an encoding job using hydra-derivatives (which uses active\_encode)
 
