@@ -16,13 +16,20 @@ docker-compose up matterhorn
 
 and you should be able to launch the web console at `http://localhost:8080/`
 
-### Configure initializer
+### Configuration
 
 In `config/initializers/active_encode.rb`, make sure you have the following code:
 
 ```ruby
 ActiveEncode::Base.engine_adapter = :matterhorn
 Rubyhorn.init
+```
+
+Make sure you have correct settings in `config/matterhorn.yml`
+
+```
+development:
+  url: http://matterhorn_system_account:CHANGE_ME@localhost:8080
 ```
 
 ## How to run an encoding job using hydra-derivatives (which uses active\_encode)
