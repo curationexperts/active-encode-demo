@@ -1,5 +1,11 @@
 # Transcoding using Matterhorn / Opencast
 
+## Update
+
+This info is probably out of date because I converted the hydra-derivatives branch to work for the Amazon transcoder instead.  In order to get matterhorn to work, we would need to use something like Hyrax's `LocalFileService` class as the `source_file_service` for hydra-derivatives, and it would probably need to call `File.open` directly before passing the source into `ActiveEncode::Base.create`.
+
+Currently the scope is to get it working for the Amazon transcoder, so Matterhorn is out of scope for the moment.  I'm leaving these instructions behind just for reference.
+
 ## Prerequsites
 
 ### Run Matterhorn
