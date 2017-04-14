@@ -54,9 +54,9 @@ preset_id = "1351620000001-000061"
 output_file = 'output_7.mp4'
 
 # The options to pass to the Elastic Transcoder job
-output_1 = { pipeline_id: pipeline_id, output_key_prefix: "active_encode-demo_app/", outputs: [{ key: output_file, preset_id: preset_id }] }
+low_res_video = { pipeline_id: pipeline_id, output_key_prefix: "active_encode-demo_app/", outputs: [{ key: output_file, preset_id: preset_id }] }
 
-Hydra::Derivatives::ActiveEncodeDerivatives.create(input_file, outputs: [output_1])
+Hydra::Derivatives::ActiveEncodeDerivatives.create(input_file, outputs: [low_res_video])
 ```
 
 Note: Your rails console will not return to the prompt until the encoding is complete, so it might sit there for several minutes with no feedback.  Use the AWS console to see the current status of the encoding.
