@@ -2,9 +2,9 @@
 
 ## Prerequsites
 
-### Set up AWS pipeline
+### Set up the Elastic Transcoder Pipeline
 
-Set up a pipeline on AWS that defines:
+Set up a pipeline on AWS Elastic Transcoder that defines:
 
 * input bucket
 * bucket for transcoded files
@@ -41,7 +41,7 @@ Aws.config[:access_key_id] = 'put your access key here'
 Aws.config[:secret_access_key] = 'put your secret key here'
 Aws.config[:region] = 'us-east-1'
 
-# The pipeline that I set up in AWS
+# The pipeline that I set up in Elastic Transcoder
 pipeline_id = '1490715200916-25b08y'
 
 # The file "sample_data.mp4" has already been uploaded to the input bucket for my pipeline.
@@ -53,7 +53,7 @@ preset_id = "1351620000001-000061"
 # Choose a name for the output file
 output_file = 'output_7.mp4'
 
-# The options to pass to the AWS job
+# The options to pass to the Elastic Transcoder job
 output_1 = { pipeline_id: pipeline_id, output_key_prefix: "active_encode-demo_app/", outputs: [{ key: output_file, preset_id: preset_id }] }
 
 Hydra::Derivatives::ActiveEncodeDerivatives.create(input_file, outputs: [output_1])
@@ -74,7 +74,7 @@ Aws.config[:access_key_id] = 'put your access key here'
 Aws.config[:secret_access_key] = 'put your secret key here'
 Aws.config[:region] = 'us-east-1'
 
-# The pipeline that I set up in AWS
+# The pipeline that I set up in Elastic Transcoder
 pipeline_id = '1490715200916-25b08y'
 
 # The file "sample_data.mp4" has already been uploaded to the input bucket for my pipeline.
