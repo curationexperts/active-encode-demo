@@ -58,7 +58,9 @@ job_settings = { pipeline_id: pipeline_id, output_key_prefix: "active_encode-dem
 
 Hydra::Derivatives::ActiveEncodeDerivatives.create(input_file, outputs: [job_settings])
 
-# Note: Your rails console will not return to the prompt until the encoding is complete, so it might sit there for several minutes with no feedback.  Use the AWS console to see the current status of the encoding.
+# Note: Your rails console will not return to the prompt until the encoding is complete,
+# so it might sit there for several minutes with no feedback.
+# Use the AWS console to see the current status of the encoding.
 ```
 
 If you want to run a separate Elastic Transcoder job for each derivative file, you could do something like this:
