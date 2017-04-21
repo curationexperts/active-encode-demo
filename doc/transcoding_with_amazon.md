@@ -30,10 +30,7 @@ ActiveEncode::Base.engine_adapter = :elastic_transcoder
 
 ## How to run an encoding job using hydra-derivatives (which uses active\_encode)
 
-```bash
-bin/rails c
-```
-In your rails console:
+Transcoding video files in your rails console:
 
 ```ruby
 # Access config for AWS
@@ -47,6 +44,26 @@ pipeline_id = '1490715200916-25b08y'
 # The file "sample_data.mp4" has already been uploaded to the input bucket for my pipeline.
 input_file = 'sample_data.mp4'
 
+# Choose a name for the output files
+base_file_name = 'output_17'
+
+# Settings for a low-res video derivative using a preset for a 320x240 resolution mp4 file
+low_res_video = { key: "#{base_file_name}.mp4", preset_id: '1351620000001-000061' }
+
+# Settings for a flash video derivative
+flash_video = { key: "#{base_file_name}.flv", preset_id: '1351620000001-100210' }
+
+# Settings to send to the Elastic Transcoder job
+job_settings = { pipeline_id: pipeline_id, output_key_prefix: "active_encode-demo_app/", outputs: [low_res_video, flash_video] }
+
+Hydra::Derivatives::ActiveEncodeDerivatives.create(input_file, outputs: [job_settings])
+
+# Note: Your rails console will not return to the prompt until the encoding is complete, so it might sit there for several minutes with no feedback.  Use the AWS console to see the current status of the encoding.
+```
+
+If you want to run a separate Elastic Transcoder job for each derivative file, you could do something like this:
+
+```ruby
 # Settings for a low-res video derivative using a preset for a 320x240 resolution mp4 file.
 low_res_preset_id = '1351620000001-000061'
 low_res_output_file = 'output_15.mp4'
@@ -58,8 +75,6 @@ flash_output_file = 'output_15.flv'
 flash_video = { pipeline_id: pipeline_id, output_key_prefix: "active_encode-demo_app/", outputs: [{ key: flash_output_file, preset_id: flash_preset_id }] }
 
 Hydra::Derivatives::ActiveEncodeDerivatives.create(input_file, outputs: [low_res_video, flash_video])
-
-# Note: Your rails console will not return to the prompt until the encoding is complete, so it might sit there for several minutes with no feedback.  Use the AWS console to see the current status of the encoding.
 ```
 
 If you want to pass in an ActiveFedora::Base record instead of just a String for the input file name, you need to set the `source` option to specify which method to call on your object to get the file name.  For example.
@@ -79,9 +94,6 @@ Hydra::Derivatives::ActiveEncodeDerivatives.create(video_record, source: :source
 
 ## How to run an encoding job using just active\_encode (not hydra-derivatives)
 
-```bash
-bin/rails c
-```
 In your rails console:
 
 ```ruby
