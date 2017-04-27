@@ -2,7 +2,12 @@
 
 ## How to run an encoding job using hydra-derivatives (which uses active\_encode)
 
-You'll need to have fedora running on port `8984`.
+### Setup
+
+If you are using an output file service that writes information to fedora,
+you'll need to have fedora running on port `8984`, and solr running on port `8983`.
+
+### How to run the encoding
 
 This information has moved to the [hydra-derivatives codebase](https://github.com/projecthydra/hydra-derivatives).
 Look under the `doc` directory.  Currently the document is on the `active_encode_dev_con` branch, but later it will probably be merged into `master` branch.

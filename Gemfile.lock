@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: git@github.com:projecthydra/hydra-derivatives.git
-  revision: 0b472b3665c4c4b5b8b0958bbc3086fa054f417b
+  revision: fdabd9acadb8411b6f7d9cf5953dfea4c142f246
   branch: active_encode_dev_con
   specs:
     hydra-derivatives (3.2.1)
